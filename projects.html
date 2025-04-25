@@ -4,18 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS perso (pour glass ou autres) -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white relative">
+  <!-- Fond animé particles (présent sur toutes les pages) -->
   <div id="tsparticles"></div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      tsParticles.load("tsparticles", { /* config identique */ });
+      tsParticles.load("tsparticles", {
+        fpsLimit: 60,
+        particles: {
+          number: { value: 100, density: { enable: true, value_area: 800 } },
+          color: { value: "#008CFF" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          move: { enable: true, speed: 1, direction: "none", out_mode: "bounce" },
+          line_linked: { enable: true, distance: 150, color: "#008CFF", opacity: 0.5, width: 1 }
+        },
+        interactivity: {
+          detectsOn: "canvas",
+          events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+          modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+      });
     });
   </script>
 
+  <!-- Navigation -->
   <nav class="bg-gray-800 shadow-md p-4 fixed w-full top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold text-orange-400">Projects</h1>
@@ -27,70 +49,79 @@
     </div>
   </nav>
 
+  <!-- Section Projets -->
   <section class="container mx-auto my-24 p-6">
     <h2 class="text-4xl font-bold text-white text-center">My Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
 
-      <!-- 1ᵉ Carte -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform hover:scale-105 transition">
-        <div class="flex flex-row items-start">
+      <!-- Carte 1 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform transition hover:scale-105">
+        <div class="flex flex-row">
           <img src="assets/CNN.png"
-               alt="CNN Project"
+               alt="Project CNN"
                class="w-48 h-32 object-cover rounded-md mr-4 flex-shrink-0">
           <div class="flex-1">
             <h3 class="text-xl font-bold text-orange-400">CIFAR-10 Image Classification with CNN (TensorFlow/Keras)</h3>
-            <p class="text-sm text-gray-400">March–April 2025 | University Paris-Saclay</p>
-            <p class="mt-2 text-sm">Built a convolutional neural network to classify images from the CIFAR-10 dataset (10 object categories). Used TensorFlow and Keras for model development, with convolutional layers, max pooling, and a Softmax output layer. Visualized training performance and evaluated accuracy using validation sets.</p>
+            <p class="text-sm text-gray-400">March 2025 - April 2025 | University Paris-Saclay</p>
+            <p class="mt-2 text-sm">
+              Built a convolutional neural network to classify images from the CIFAR-10 dataset (10 object categories). Used TensorFlow and Keras for model development, with convolutional layers, max pooling, and a Softmax output layer. Visualized training performance and evaluated accuracy using validation sets.
+            </p>
             <a href="https://github.com/msmail723"
-               class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub -  CIFAR-10 Image Classification with CNN</a>
+               class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub - CIFAR-10 Image Classification</a>
           </div>
         </div>
       </div>
 
-      <!-- 2ᵉ Carte -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform hover:scale-105 transition">
-        <div class="flex flex-row items-start">
+      <!-- Carte 2 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform transition hover:scale-105">
+        <div class="flex flex-row">
           <img src="assets/PROGWEB.png"
-               alt="Recipe Manager"
+               alt="Project Recipe Manager"
                class="w-48 h-32 object-cover rounded-md mr-4 flex-shrink-0">
           <div class="flex-1">
             <h3 class="text-xl font-bold text-orange-400">Bilingual Recipe Manager (Node.js / Express / jQuery)</h3>
-            <p class="text-sm text-gray-400">February–March 2025 | University Paris-Saclay</p>
-            <p class="mt-2 text-sm">A full-stack single-page web app to create, edit, and translate cooking recipes in English and French. Features user authentication, role-based permissions (Cook, Chef, Translator, Admin), live search, comments, likes, and recipe validation by admin.</p>
+            <p class="text-sm text-gray-400">February 2025 - March 2025 | University Paris-Saclay</p>
+            <p class="mt-2 text-sm">
+              A full-stack single-page web app to create, edit, and translate cooking recipes in English and French. Features user authentication, role-based permissions (Cook, Chef, Translator, Admin), live search, comments, likes, and recipe validation by admin.
+            </p>
             <a href="https://github.com/msmail723"
                class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub - Bilingual Recipe Manager</a>
           </div>
         </div>
       </div>
 
-      <!-- 3ᵉ Carte -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform hover:scale-105 transition">
-        <div class="flex flex-row items-start">
+      <!-- Carte 3 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform transition hover:scale-105">
+        <div class="flex flex-row">
           <img src="assets/PCII.png"
-               alt="Crystal Siege"
+               alt="Project Crystal Siege"
                class="w-48 h-32 object-cover rounded-md mr-4 flex-shrink-0">
           <div class="flex-1">
             <h3 class="text-xl font-bold text-orange-400">Crystal Siege: Miners vs. Giants</h3>
-            <p class="text-sm text-gray-400">September–November 2024 | University Paris-Saclay</p>
-            <p class="mt-2 text-sm">Crystal Siege is a real-time, Java Swing–based strategy game where players manage a team of hardy miners harvesting powerful crystals while fending off marauding giants. I personally drove the integration of all visual assets and crafted smooth death/collection animations for both miners and crystals. I also architected the health-bar system—updating miners’ and giants’ hit points in real time—and implemented the end-game logic that gracefully handles victory or defeat. Built around multi-threaded controllers for movement, combat, and resource management, Crystal Siege showcases interactive UI design coupled with robust concurrent gameplay mechanics.</p>
+            <p class="text-sm text-gray-400">September 2024 - November 2024 | University Paris-Saclay</p>
+            <p class="mt-2 text-sm">
+              Crystal Siege is a real-time, Java Swing–based strategy game where players manage a team of hardy miners harvesting powerful crystals while fending off marauding giants. I personally drove the integration of all visual assets and crafted smooth death/collection animations for both miners and crystals. I also architected the health-bar system—updating miners’ and giants’ hit points in real time—and implemented the end-game logic that gracefully handles victory or defeat. Built around multi-threaded controllers for movement, combat, and resource management, Crystal Siege showcases interactive UI design coupled with robust concurrent gameplay mechanics.
+            </p>
             <a href="https://github.com/msmail723"
-               class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub - Crystal Siege: Miners vs. Giants</a>
+               class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub - scala-project</a>
           </div>
         </div>
       </div>
 
-      <!-- 4ᵉ Carte -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform hover:scale-105 transition">
-        <div class="flex flex-row items-start">
+      <!-- Carte 4 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md transform transition hover:scale-105">
+        <div class="flex flex-row">
           <img src="assets/ISD.png"
-               alt="Energy Forecast"
+               alt="Project Energy Forecast"
                class="w-48 h-32 object-cover rounded-md mr-4 flex-shrink-0">
           <div class="flex-1">
             <h3 class="text-xl font-bold text-orange-400">Building Energy Consumption Forecasting with Random Forest & Gradient Boosting</h3>
-            <p class="text-sm text-gray-400">February–March 2024 | University Paris-Saclay</p>
-            <p class="mt-2 text-sm">In this project, I built a full end-to-end machine learning pipeline to predict the heating load of buildings using the UCI Energy Efficiency dataset. After loading and cleaning 768 samples with 8 architectural and environmental features, I applied PCA to reduce dimensionality while preserving 100% of the variance. I then trained and tuned Random Forest and Gradient Boosting models via 5-fold cross-validation, achieving test RMSEs below 0.6 kWh/m² and R² scores above 0.99. Finally, I visualized model performance with actual vs. predicted scatter plots and saved the best models for deployment.</p>
+            <p class="text-sm text-gray-400">February 2024 - March 2024 | University Paris-Saclay</p>
+            <p class="mt-2 text-sm">
+              In this project, I built a full end-to-end machine learning pipeline to predict the heating load of buildings using the UCI Energy Efficiency dataset. After loading and cleaning 768 samples with 8 architectural and environmental features, I applied PCA to reduce dimensionality while preserving 100% of the variance. I then trained and tuned Random Forest and Gradient Boosting models via 5-fold cross-validation, achieving test RMSEs below 0.6 kWh/m² and R² scores above 0.99. Finally, I visualized model performance with actual vs. predicted scatter plots and saved the best models for deployment.
+            </p>
             <a href="https://github.com/msmail723"
-               class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub - Building Energy Consumption Forecasting</a>
+               class="text-blue-400 hover:text-blue-300 block mt-2">🔗 GitHub - Bilingual Recipe Manager</a>
           </div>
         </div>
       </div>

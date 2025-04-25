@@ -1,4 +1,10 @@
+/* Custom Styles */
 .custom-image {
-  width: 12rem; 
-  height: auto; 
+  width: 12rem;
+  height: auto;
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
